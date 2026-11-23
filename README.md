@@ -126,3 +126,11 @@ I'm proud of the progress I've made so far, and I'm looking forward to continuin
 **Working prototype — ongoing development**
 
 CommunityConnect is an educational project and is not affiliated with the organizations listed. Information about assistance programs should always be verified through their official websites.
+
+## Screenshots
+
+### CommunityConnect Homepage
+![CommunityConnect Homepage](communityconnect-homepage.png)
+
+### AI-Powered Resource Results
+![CommunityConnect Results](communityconnect-results.png)
