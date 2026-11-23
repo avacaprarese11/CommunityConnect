@@ -49,14 +49,13 @@ keywords = {
 
 st.subheader("Find Community Resources")
 
-with st.form("search_form"):
-    question = st.text_input(
-        "What do you need help with?",
-        max_chars=300
-    )
-    submitted = st.form_submit_button("Find Resources")
+question = st.text_input(
+    "What do you need help with?",
+    max_chars=300,
+    key="resource_question"
+)
 
-if submitted and question.strip():
+if question.strip():
     words = set(re.findall(r"\b\w+\b", question.lower()))
 
     categories = [
