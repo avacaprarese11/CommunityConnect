@@ -127,10 +127,18 @@ I'm proud of the progress I've made so far, and I'm looking forward to continuin
 
 CommunityConnect is an educational project and is not affiliated with the organizations listed. Information about assistance programs should always be verified through their official websites.
 
+
 ## Screenshots
 
-### CommunityConnect Homepage
+Here are a few examples of CommunityConnect in action.
+
+### Homepage
+
 ![CommunityConnect Homepage](communityconnect-homepage.png)
 
-### AI-Powered Resource Results
-![CommunityConnect Results](communityconnect-results.png)
+### Finding Community Resources
+
+This example shows how CommunityConnect identifies relevant resources and uses Claude to explain them.
+
+![CommunityConnect AI Results](communityconnect-results.png)
+
