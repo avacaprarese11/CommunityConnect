@@ -10,24 +10,33 @@ st.set_page_config(page_title="CommunityConnect", page_icon="🤝")
 st.title("🤝 CommunityConnect")
 st.write("An AI-powered community resource navigator.")
 
-st.info("Demonstration only: all organizations are fictional.")
+st.info(
+    "Educational prototype using real Virginia resource "
+    "directories. Services and eligibility must be "
+    "confirmed with the official provider."
+)
 
 # Our resource directory
 resources = pd.DataFrame({
     "Organization": [
-        "Community Food Program",
-        "Employment Support Center",
-        "Housing Assistance Program"
+        "Virginia CommonHelp",
+        "211 Virginia",
+        "Virginia Works"
     ],
     "Category": [
         "Food",
-        "Employment",
-        "Housing"
+        "Housing",
+        "Employment"
     ],
     "Description": [
-        "Helps families access food assistance.",
-        "Provides job search and career support.",
-        "Provides information about housing assistance."
+        "Apply for benefits including SNAP food assistance.",
+        "Find housing assistance information and referrals.",
+        "Explore job search and workforce training services."
+    ],
+    "Website": [
+        "https://www.commonhelp.virginia.gov/",
+        "https://211virginia.org/",
+        "https://virginiaworks.gov/im-a-job-seeker/"
     ]
 })
 
@@ -131,7 +140,7 @@ Explain how these resources could help.
 
 Rules:
 - Recommend only listed resources.
-- All organizations are fictional examples.
+- These are real Virginia resources. Do not invent or guarantee services, eligibility, availability, or contact information. Use only the supplied resource details.
 - Never invent phone numbers or addresses.
 - Do not invent eligibility requirements.
 - Never claim these services are verified.
