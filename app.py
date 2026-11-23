@@ -16,7 +16,6 @@ st.info(
     "confirmed with the official provider."
 )
 
-# Our resource directory
 resources = pd.DataFrame({
     "Organization": [
         "Virginia CommonHelp",
@@ -40,14 +39,12 @@ resources = pd.DataFrame({
     ]
 })
 
-# Words that help identify what someone needs
 keywords = {
     "Food": ["food", "hungry", "groceries", "eat", "meals"],
     "Housing": ["housing", "rent", "homeless", "shelter", "apartment"],
     "Employment": ["job", "work", "unemployed", "career", "employment"]
 }
 
-# Protect Claude API requests with a password
 st.subheader("Private AI Demo")
 
 password = st.text_input(
@@ -68,11 +65,9 @@ if not hmac.compare_digest(
 
 st.success("Demo unlocked!")
 
-# Keep a small test limit per browser session
 if "request_count" not in st.session_state:
     st.session_state.request_count = 0
 
-# Ask the user what they need
 with st.form("resource_search"):
     question = st.text_input(
         "What do you need help with?",
@@ -85,7 +80,6 @@ if submitted:
         st.warning("Please enter a question.")
 
     else:
-        # Find categories matching the question
         words_in_question = set(
             re.findall(r"\b\w+\b", question.lower())
         )
@@ -107,9 +101,18 @@ if submitted:
 
         else:
             st.subheader("Matching Resources")
-            st.dataframe(matches, hide_index=True)
+            st.dataframe(
+    matches,
+    hide_index=True,
+    column_config={
+        "Website": st.column_config.LinkColumn(
+            "Official Website",
+            display_text="Visit Website"
+        )
+    }
+)
 
-            # Only make an API request if under the test limit
+
             if st.session_state.request_count >= 5:
                 st.warning(
                     "Demo request limit reached for this session."
